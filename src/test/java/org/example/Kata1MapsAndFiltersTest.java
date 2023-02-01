@@ -2,10 +2,7 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.logging.Logger;
 
 import static java.util.Arrays.asList;
@@ -116,5 +113,15 @@ class Kata1MapsAndFiltersTest {
 
         assertTrue(asList("A","B","C","D").equals(values));
     }
+
+    @Test
+    public void testExtractFromOptional() {
+        Optional<Integer> optional = Optional.of(3);
+        List<Integer> output = extractFromOptional(optional);
+
+        assertTrue(asList(3).equals(output));
+    }
+
+
 
 }

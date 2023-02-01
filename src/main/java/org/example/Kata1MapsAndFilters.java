@@ -1,9 +1,6 @@
 package org.example;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -28,16 +25,17 @@ public class Kata1MapsAndFilters {
                 .collect(toList());
     }
     public static List<Integer> joinTwoLists(List<List<Integer>> list1, List<Integer> list2) {
-        return Stream.concat(list1.stream()
+       return Stream.concat(list1.stream()
                 .flatMap(Collection::stream)
                 , list2.stream()
         ).collect(toList());
+
     }
 
-    public static Set<String> getKidNames(List<Person> collection) {
+    public static Set<String> getKidNames(List<Person> personList) {
         return
-                collection.stream()
-                        .filter(p->p.getAge() < 18)
+                personList.stream()
+                        .filter( p -> p.getAge() < 18)
                         .map(Person::getName)
                         .collect(Collectors.toSet());
     }
@@ -67,7 +65,12 @@ public class Kata1MapsAndFilters {
                 .flatMap(combinedStream -> combinedStream.values().stream())
                 //step 4: convert STREAM to LIST
                 .collect(Collectors.toList());
-
     }
+    public static List<Integer> extractFromOptional(Optional<Integer> optional) {
+        return optional.stream()
+                //.flatMap(Stream::of)
+                .collect(Collectors.toList());
+    }
+
 
 }
