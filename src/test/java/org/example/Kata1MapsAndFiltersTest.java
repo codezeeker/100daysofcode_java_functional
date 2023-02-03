@@ -122,6 +122,12 @@ class Kata1MapsAndFiltersTest {
         assertTrue(asList(3).equals(output));
     }
 
+    @Test
+    public void transformShouldConvertCollectionElementsToUpperCase() {
+        List<Integer> numbers = asList(1, 2, 3, 4, 5);
+        assertEquals(calculate(numbers),(1 + 2 + 3 + 4 + 5));
+    }
+
 
 
 }

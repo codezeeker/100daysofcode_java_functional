@@ -72,5 +72,10 @@ public class Kata1MapsAndFilters {
                 .collect(Collectors.toList());
     }
 
+    public static Integer calculate(List<Integer> numbers) {
+        return numbers.stream()
+                .reduce(0, (result, num) -> result + num);
+    }
+
 
 }
